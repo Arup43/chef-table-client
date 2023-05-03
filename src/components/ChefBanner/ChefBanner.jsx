@@ -1,11 +1,15 @@
 /* eslint-disable react/prop-types */
 import "./ChefBanner.css";
+import LazyLoad from "react-lazy-load";
+
 const ChefBanner = ({ chef }) => {
   return (
     <div>
       <div className="d-flex justify-content-center align-items-center">
         <div className="pic">
-          <img className="img-fluid" src={chef?.image} alt="" />
+          <LazyLoad width={700}>
+            <img className="img-fluid" src={chef?.image} alt="" />
+          </LazyLoad>
         </div>
         <div className="des ms-5">
           <h1 className="mb-4">{chef?.name}</h1>
