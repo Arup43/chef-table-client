@@ -1,0 +1,21 @@
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    place-items: center;
+}
+
+.service-body {
+    background-color: rgba(256, 0, 0, 0.4);
+}
+
+.more-info {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    color: red;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
