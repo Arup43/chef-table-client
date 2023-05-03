@@ -14,7 +14,7 @@ const ChefRecipes = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/chefs/${id}`)
+        fetch(`https://chef-table-server-arup43.vercel.app/chefs/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setChef(data);
@@ -22,7 +22,7 @@ const ChefRecipes = () => {
     }, [id]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/recipes/${id}}`)
+        fetch(`https://chef-table-server-arup43.vercel.app/recipes/${id}}`)
             .then((res) => res.json())
             .then((data) => setRecipes(data));
     }, [id]);
