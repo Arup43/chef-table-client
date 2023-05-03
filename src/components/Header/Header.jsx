@@ -23,7 +23,7 @@ const Header = () => {
             <h1 className="text-danger">Chef Table</h1>
           </Link>
         </div>
-        <div>
+        <div className="me-4">
           <ul>
             <Link to="/">Home</Link>
             <Link to="/blog">Blogs</Link>

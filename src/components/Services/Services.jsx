@@ -1,10 +1,9 @@
 import "./Services.css";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 const Services = () => {
   return (
-    <div>
+    <div className="mb-5 pb-5">
       <h1 className="text-center">Our Services</h1>
       <div className="services mt-4 pt-4">
         <div className="service">
