@@ -7,7 +7,7 @@ const Header = () => {
       <nav className="d-flex align-items-center justify-content-between">
         <div className="brand">
           <Link to="/">
-            <h1>Chef Table</h1>
+            <h1 className="text-danger">Chef Table</h1>
           </Link>
         </div>
         <div>

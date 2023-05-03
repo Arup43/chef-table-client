@@ -9,7 +9,7 @@ import Registration from "./pages/Registration/Registration";
 import Blog from "./pages/Blog/Blog";
 import ChefRecipes from "./pages/ChefRecipes/ChefRecipes";
 import NotFound from "./pages/NotFound/NotFound";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const router = createBrowserRouter([
   {
@@ -30,16 +30,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <Blog></Blog>
+        element: <Blog></Blog>,
       },
       {
         path: "/chef-recipes/:id",
-        element: <ChefRecipes></ChefRecipes>
+        element: <ChefRecipes></ChefRecipes>,
       },
       {
         path: "*",
-        element: <NotFound></NotFound>
-      }
+        element: <NotFound></NotFound>,
+      },
     ],
   },
 ]);

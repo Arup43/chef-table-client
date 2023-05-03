@@ -1,0 +1,32 @@
+.banner {
+    background-image: url(https://www.lacademie.com/wp-content/uploads/2022/01/popular-bangladeshi-foods.jpg);
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* make a black layer on it */
+    position: relative;
+    z-index: 1;
+    color: white;
+    border-radius: 50px;
+    padding: 0 20rem;
+}
+
+.name {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.country{
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
