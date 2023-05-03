@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Chef = ({ chef }) => {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "100%" }}>
       <Card.Img variant="top" src={chef.image} />
       <Card.Body>
         <Card.Title className="chef-name mb-4">{chef.name}</Card.Title>
