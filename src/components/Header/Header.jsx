@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -25,8 +26,22 @@ const Header = () => {
         </div>
         <div className="me-4">
           <ul>
-            <Link to="/">Home</Link>
-            <Link to="/blog">Blogs</Link>
+            <NavLink
+              to="/"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/blog"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Blogs
+            </NavLink>
           </ul>
         </div>
         <div>
@@ -34,16 +49,19 @@ const Header = () => {
           {user ? (
             <div className="d-flex justify-content-center align-items-center">
               <div className="image-container" title={user.displayName}>
-                <img
-                  className="img-fluid"
-                  src={user.photoURL}
-                  alt="User"
-                />
+                <img className="img-fluid" src={user.photoURL} alt="User" />
               </div>
-              <button onClick={handleLogout} className="btn btn-danger logout-btn ms-4">Logout</button>
+              <button
+                onClick={handleLogout}
+                className="btn btn-danger logout-btn ms-4"
+              >
+                Logout
+              </button>
             </div>
           ) : (
-            <Link to="/login"><button className="btn btn-danger logout-btn ms-4">Login</button></Link>
+            <Link to="/login">
+              <button className="btn btn-danger logout-btn ms-4">Login</button>
+            </Link>
           )}
         </div>
       </nav>
