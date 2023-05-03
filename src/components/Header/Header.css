@@ -30,3 +30,7 @@ nav ul a{
     object-fit: cover;
 }
 
+.logout-btn {
+    width: 75px;
+    height: 40px;
+}

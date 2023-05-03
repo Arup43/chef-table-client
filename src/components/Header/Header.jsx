@@ -1,7 +1,20 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        console.log("User Logged Out");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <div className="container my-5">
       <nav className="d-flex align-items-center justify-content-between">
@@ -10,7 +23,7 @@ const Header = () => {
             <h1 className="text-danger">Chef Table</h1>
           </Link>
         </div>
-        <div className="me-5 pe-5">
+        <div>
           <ul>
             <Link to="/">Home</Link>
             <Link to="/blog">Blogs</Link>
@@ -18,13 +31,20 @@ const Header = () => {
         </div>
         <div>
           {/* User profile picture */}
-          <div className="image-container" title="John doe">
-            <img
-              className="img-fluid"
-              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-              alt="User"
-            />
-          </div>
+          {user ? (
+            <div className="d-flex justify-content-center align-items-center">
+              <div className="image-container" title={user.displayName}>
+                <img
+                  className="img-fluid"
+                  src={user.photoURL}
+                  alt="User"
+                />
+              </div>
+              <button onClick={handleLogout} className="btn btn-danger logout-btn ms-4">Logout</button>
+            </div>
+          ) : (
+            <Link to="/login"><button className="btn btn-danger logout-btn ms-4">Login</button></Link>
+          )}
         </div>
       </nav>
     </div>
