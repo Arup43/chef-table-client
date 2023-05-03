@@ -21,3 +21,15 @@
     height:100%;
     object-fit: cover;
 }
+
+/* media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .review {
+        width: 100%;
+        margin-bottom: 70px;
+    }
+    .reviews {
+        flex-direction: column;
+        text-align: center;
+    }
+}

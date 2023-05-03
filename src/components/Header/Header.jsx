@@ -24,7 +24,7 @@ const Header = () => {
             <h1 className="text-danger">Chef Table</h1>
           </Link>
         </div>
-        <div className="me-4">
+        <div>
           <ul>
             <NavLink
               to="/"
@@ -47,13 +47,13 @@ const Header = () => {
         <div>
           {/* User profile picture */}
           {user ? (
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="d-flex justify-content-center align-items-center right-side">
               <div className="image-container" title={user.displayName}>
                 <img className="img-fluid" src={user.photoURL} alt="User" />
               </div>
               <button
                 onClick={handleLogout}
-                className="btn btn-danger logout-btn ms-4"
+                className="btn btn-danger logout-btn"
               >
                 Logout
               </button>

@@ -19,3 +19,10 @@
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
+
+/* media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .services {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
