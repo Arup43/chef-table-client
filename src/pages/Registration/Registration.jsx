@@ -33,6 +33,7 @@ const Registration = () => {
         updateUserProfile(name, photo)
           .then(() => {
             console.log("Profile Updated");
+            form.reset();
           })
           .catch((error) => {
             console.log(error.message);
