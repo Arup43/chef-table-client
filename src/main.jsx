@@ -11,6 +11,7 @@ import ChefRecipes from "./pages/ChefRecipes/ChefRecipes";
 import NotFound from "./pages/NotFound/NotFound";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AuthProvider from "./providers/AuthProvider";
+import PrivateRoute from "./routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/chef-recipes/:id",
-        element: <ChefRecipes></ChefRecipes>,
+        element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
       },
       {
         path: "*",

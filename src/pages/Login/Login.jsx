@@ -1,13 +1,17 @@
 import { useContext, useState } from "react";
 import "./Login.css";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
   const { signIn, loginWithGoogle, loginWithGithub } = useContext(AuthContext);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -21,6 +25,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
@@ -30,6 +35,7 @@ const Login = () => {
   const handleGoogleLogin = () => {
     loginWithGoogle()
       .then((result) => {
+        navigate(from, { replace: true });
         console.log(result.user);
       })
       .catch((error) => {
@@ -38,12 +44,13 @@ const Login = () => {
   };
   const handleGithubLogin = () => {
     loginWithGithub()
-        .then((result) => {
-            console.log(result.user);
-            })
-        .catch((error) => {
-            setError(error.message);
-        });
+      .then((result) => {
+        navigate(from, { replace: true });
+        console.log(result.user);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (
